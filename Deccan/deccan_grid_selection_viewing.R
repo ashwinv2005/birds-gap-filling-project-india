@@ -7,7 +7,7 @@ load("grids_g0_sf.RData")
 
 ## Load masks 
 
-masks_5km = st_read("grids5kmHabitatMasks.geojson") %>%
+masks_5km = st_read("Deccan/grids5kmHabitatMasks.geojson") %>%
   dplyr::select(GRID_G0,woodland,maskWdl,cropland,maskCrp,one,maskOne)
 
 ## Deccan
@@ -165,9 +165,9 @@ o_region_1_all = dr1_grids_clipped %>%
 
 # replace with final grids
 
-deccan_region_1_Wdl_final = read.csv("deccan_region_1_Wdl_final.csv")
-deccan_region_1_Crp_final = read.csv("deccan_region_1_Crp_final.csv")
-deccan_region_1_One_final = read.csv("deccan_region_1_One_final.csv")
+deccan_region_1_Wdl_final = read.csv("Deccan/deccan_region_1_Wdl_final.csv")
+deccan_region_1_Crp_final = read.csv("Deccan/deccan_region_1_Crp_final.csv")
+deccan_region_1_One_final = read.csv("Deccan/deccan_region_1_One_final.csv")
 
 w_region_1 = dr1_grids_clipped %>%
   filter(GRID_G0 %in% deccan_region_1_Wdl_final$GRID_G0)
@@ -324,9 +324,9 @@ o_region_2_all = dr2_grids_clipped %>%
 
 # replace with final grids
 
-deccan_region_2_Wdl_final = read.csv("deccan_region_2_Wdl_final.csv")
-deccan_region_2_Crp_final = read.csv("deccan_region_2_Crp_final.csv")
-deccan_region_2_One_final = read.csv("deccan_region_2_One_final.csv")
+deccan_region_2_Wdl_final = read.csv("Deccan/deccan_region_2_Wdl_final.csv")
+deccan_region_2_Crp_final = read.csv("Deccan/deccan_region_2_Crp_final.csv")
+deccan_region_2_One_final = read.csv("Deccan/deccan_region_2_One_final.csv")
 
 w_region_2 = dr2_grids_clipped %>%
   filter(GRID_G0 %in% deccan_region_2_Wdl_final$GRID_G0)
@@ -668,26 +668,26 @@ or3_selected_map = mapView(o_region_3, zcol = NULL,
                                                        row.numbers=FALSE),
                            alpha.regions = 0, lwd = 5, legend = NULL, color = "#F7991E")
 
-st_write(w_region_1_all, "Region 1 Woodland Mask.geojson", driver = "GeoJSON", delete_dsn = TRUE)
-st_write(w_region_1, "Region 1 Selected Woodland.geojson", driver = "GeoJSON", delete_dsn = TRUE)
-st_write(c_region_1_all, "Region 1 Cropland Mask.geojson", driver = "GeoJSON", delete_dsn = TRUE)
-st_write(c_region_1, "Region 1 Selected Cropland.geojson", driver = "GeoJSON", delete_dsn = TRUE)
-st_write(o_region_1_all, "Region 1 ONE Mask.geojson", driver = "GeoJSON", delete_dsn = TRUE)
-st_write(o_region_1, "Region 1 Selected ONE.geojson", driver = "GeoJSON", delete_dsn = TRUE)
+st_write(w_region_1_all, "Deccan/Region 1 Woodland Mask.geojson", driver = "GeoJSON", delete_dsn = TRUE)
+st_write(w_region_1, "Deccan/Region 1 Selected Woodland.geojson", driver = "GeoJSON", delete_dsn = TRUE)
+st_write(c_region_1_all, "Deccan/Region 1 Cropland Mask.geojson", driver = "GeoJSON", delete_dsn = TRUE)
+st_write(c_region_1, "Deccan/Region 1 Selected Cropland.geojson", driver = "GeoJSON", delete_dsn = TRUE)
+st_write(o_region_1_all, "Deccan/Region 1 ONE Mask.geojson", driver = "GeoJSON", delete_dsn = TRUE)
+st_write(o_region_1, "Deccan/Region 1 Selected ONE.geojson", driver = "GeoJSON", delete_dsn = TRUE)
 
-st_write(w_region_2_all, "Region 2 Woodland Mask.geojson", driver = "GeoJSON", delete_dsn = TRUE)
-st_write(w_region_2, "Region 2 Selected Woodland.geojson", driver = "GeoJSON", delete_dsn = TRUE)
-st_write(c_region_2_all, "Region 2 Cropland Mask.geojson", driver = "GeoJSON", delete_dsn = TRUE)
-st_write(c_region_2, "Region 2 Selected Cropland.geojson", driver = "GeoJSON", delete_dsn = TRUE)
-st_write(o_region_2_all, "Region 2 ONE Mask.geojson", driver = "GeoJSON", delete_dsn = TRUE)
-st_write(o_region_2, "Region 2 Selected ONE.geojson", driver = "GeoJSON", delete_dsn = TRUE)
+st_write(w_region_2_all, "Deccan/Region 2 Woodland Mask.geojson", driver = "GeoJSON", delete_dsn = TRUE)
+st_write(w_region_2, "Deccan/Region 2 Selected Woodland.geojson", driver = "GeoJSON", delete_dsn = TRUE)
+st_write(c_region_2_all, "Deccan/Region 2 Cropland Mask.geojson", driver = "GeoJSON", delete_dsn = TRUE)
+st_write(c_region_2, "Deccan/Region 2 Selected Cropland.geojson", driver = "GeoJSON", delete_dsn = TRUE)
+st_write(o_region_2_all, "Deccan/Region 2 ONE Mask.geojson", driver = "GeoJSON", delete_dsn = TRUE)
+st_write(o_region_2, "Deccan/Region 2 Selected ONE.geojson", driver = "GeoJSON", delete_dsn = TRUE)
 
-st_write(w_region_3_all, "Region 3 Woodland Mask.geojson", driver = "GeoJSON", delete_dsn = TRUE)
-st_write(w_region_3, "Region 3 Selected Woodland.geojson", driver = "GeoJSON", delete_dsn = TRUE)
-st_write(c_region_3_all, "Region 3 Cropland Mask.geojson", driver = "GeoJSON", delete_dsn = TRUE)
-st_write(c_region_3, "Region 3 Selected Cropland.geojson", driver = "GeoJSON", delete_dsn = TRUE)
-st_write(o_region_3_all, "Region 3 ONE Mask.geojson", driver = "GeoJSON", delete_dsn = TRUE)
-st_write(o_region_3, "Region 3 Selected ONE.geojson", driver = "GeoJSON", delete_dsn = TRUE)
+st_write(w_region_3_all, "Deccan/Region 3 Woodland Mask.geojson", driver = "GeoJSON", delete_dsn = TRUE)
+st_write(w_region_3, "Deccan/Region 3 Selected Woodland.geojson", driver = "GeoJSON", delete_dsn = TRUE)
+st_write(c_region_3_all, "Deccan/Region 3 Cropland Mask.geojson", driver = "GeoJSON", delete_dsn = TRUE)
+st_write(c_region_3, "Deccan/Region 3 Selected Cropland.geojson", driver = "GeoJSON", delete_dsn = TRUE)
+st_write(o_region_3_all, "Deccan/Region 3 ONE Mask.geojson", driver = "GeoJSON", delete_dsn = TRUE)
+st_write(o_region_3, "Deccan/Region 3 Selected ONE.geojson", driver = "GeoJSON", delete_dsn = TRUE)
 
 
 deccan_grids = wr1_all_map + wr1_selected_map + 
@@ -700,4 +700,4 @@ deccan_grids = wr1_all_map + wr1_selected_map +
   cr3_all_map +
   or3_all_map
 
-mapshot(deccan_grids, "deccan_grids.html")
+mapshot(deccan_grids, "Deccan/deccan_grids.html")
