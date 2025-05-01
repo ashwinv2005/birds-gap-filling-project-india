@@ -7,8 +7,10 @@ load("grids_g0_sf.RData")
 
 ## Load masks 
 
-masks_5km = st_read("Deccan/grids5kmHabitatMasks.geojson") %>%
+masks_5km = st_read("grids5kmHabitatMasks.geojson") %>%
   dplyr::select(GRID_G0,woodland,maskWdl,cropland,maskCrp,one,maskOne)
+
+write.csv(masks_5km %>% st_drop_geometry(),"habitat_mask_data.csv",row.names=F)
 
 ## Deccan
 # Isolate districts identified for the Deccan gap filling and identify grid cells
